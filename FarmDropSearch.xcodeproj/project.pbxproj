@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2C8D4441E8188DE00D7135A /* ProducerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8D4431E8188DE00D7135A /* ProducerDTO.swift */; };
 		D2ED45191E7F2B6900E76C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED45181E7F2B6900E76C76 /* AppDelegate.swift */; };
 		D2ED45211E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2ED451F1E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld */; };
 		D2ED45231E7F2B6900E76C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ED45221E7F2B6900E76C76 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2C8D4431E8188DE00D7135A /* ProducerDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducerDTO.swift; sourceTree = "<group>"; };
 		D2ED45151E7F2B6900E76C76 /* FarmDropSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmDropSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ED45181E7F2B6900E76C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2ED45201E7F2B6900E76C76 /* FarmDropSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FarmDropSearch.xcdatamodel; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2C8D4421E8188CE00D7135A /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8D4431E8188DE00D7135A /* ProducerDTO.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
 		D2ED450C1E7F2B6900E76C76 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 		D2ED45571E7F454A00E76C76 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				D2C8D4421E8188CE00D7135A /* entity */,
 				D2ED45581E7F455200E76C76 /* repository */,
 			);
 			name = data;
@@ -402,6 +413,7 @@
 			files = (
 				D2ED45541E7F40F400E76C76 /* Producer.swift in Sources */,
 				D2ED454B1E7F33F300E76C76 /* UseCase.swift in Sources */,
+				D2C8D4441E8188DE00D7135A /* ProducerDTO.swift in Sources */,
 				D2ED45651E7F4C9600E76C76 /* MockProducerDataStore.swift in Sources */,
 				D2ED45211E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld in Sources */,
 				D2ED45521E7F3C8200E76C76 /* ProducerDataSource.swift in Sources */,
@@ -616,6 +628,7 @@
 				D2ED45371E7F2B6900E76C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2ED45381E7F2B6900E76C76 /* Build configuration list for PBXNativeTarget "FarmDropSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -624,6 +637,7 @@
 				D2ED453A1E7F2B6900E76C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
