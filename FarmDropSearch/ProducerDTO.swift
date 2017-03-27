@@ -13,10 +13,10 @@ struct ProducerDTO {
     let name: String
     let shortDescription: String
     let location: String
-    let imageSets : [ImageSetDTO]
+    var imageSets : [ImageSetDTO]
 }
 
 struct ImageSetDTO {
     let path: String
-    let index: Int
+    let position: Int
 }
