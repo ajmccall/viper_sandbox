@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct MockProducerDataStore : ProducerDataSource {
+struct MockProducerDataStore {
     
     let path = Bundle.main.url(forResource: "producers-page1", withExtension: "json")
-    let rawProducers : [Producer]
+    let rawProducers : [ProducerDTO]
     
     init() {
 
-        var arrayOfProducers = [Producer]()
+        var arrayOfProducers = [ProducerDTO]()
         do {
             let data = try Data(contentsOf: path!)
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -29,7 +29,7 @@ struct MockProducerDataStore : ProducerDataSource {
                         
                         if let jsonProducer = object as? [String: Any] {
                             
-                            if let producer = Producer(json: jsonProducer) {
+                            if let producer = ProducerDTO(json: jsonProducer) {
                                 arrayOfProducers.append(producer)
                             }
                         }
@@ -42,11 +42,11 @@ struct MockProducerDataStore : ProducerDataSource {
         rawProducers = arrayOfProducers
     }
 
-    func producerCatalogue(completion: (ProducerCatalogue) -> Void) {
-        completion(ProducerCatalogue(producers: rawProducers, page: 0))
+    func producerCatalogue(completion: ([ProducerDTO]) -> Void) {
+        completion(rawProducers)
     }
 
-    func getProducer(byId id: Int, completion: (Producer?) -> Void) {
+    func getProducer(byId id: Int, completion: (ProducerDTO?) -> Void) {
         
         var found = false
         for producer in rawProducers {
@@ -63,7 +63,7 @@ struct MockProducerDataStore : ProducerDataSource {
     }
 }
 
-extension Producer {
+extension ProducerDTO {
     
     init?(json: [String: Any]) {
      
@@ -81,18 +81,35 @@ extension Producer {
         self.id = id
         self.location = location
         self.shortDescription = shortDescription
-        
-        var urls = [URL]()
+        self.imageSets = []
+
         for object in images {
-            if let imageDictionary = object as? [String: Any] {
-                if let path = imageDictionary["path"] as? String {
-                    if let url = URL(string: path) {
-                        urls.append(url)
-                    }
+            if let imageSetJson = object as? [String: Any] {
+                if let imageSet = ImageSetDTO(json: imageSetJson) {
+                    self.imageSets.append(imageSet)
                 }
             }
         }
-        self.imageURLs = urls
         
+    }
+}
+
+/*
+ "images":[{"path":"https://fd-v5-api-release.imgix.net/assets/producer/840a557f38a55e0dd8ee6bd8cd08b1be7adafa4c26037c1a5f62f1b38a0e7a7e/DSC05545.JPG","position":1}]
+ */
+
+extension ImageSetDTO {
+    
+    init?(json: [String: Any]) {
+        
+        guard
+            let path = json["path"] as? String,
+            let position = json["position"] as? Int
+        else {
+                return nil
+        }
+        
+        self.path = path
+        self.position = position
     }
 }

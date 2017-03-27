@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22A1F811E89B5C500BB1B81 /* ProducerDTOEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A1F801E89B5C500BB1B81 /* ProducerDTOEntityMapper.swift */; };
+		D22A1F831E89BA8500BB1B81 /* ProducerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A1F821E89BA8500BB1B81 /* ProducerDTO.swift */; };
 		D2ED45191E7F2B6900E76C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED45181E7F2B6900E76C76 /* AppDelegate.swift */; };
 		D2ED45211E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2ED451F1E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld */; };
 		D2ED45231E7F2B6900E76C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ED45221E7F2B6900E76C76 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D22A1F801E89B5C500BB1B81 /* ProducerDTOEntityMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProducerDTOEntityMapper.swift; path = data/mapper/ProducerDTOEntityMapper.swift; sourceTree = "<group>"; };
+		D22A1F821E89BA8500BB1B81 /* ProducerDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProducerDTO.swift; path = data/entity/ProducerDTO.swift; sourceTree = "<group>"; };
 		D2ED45151E7F2B6900E76C76 /* FarmDropSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarmDropSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ED45181E7F2B6900E76C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2ED45201E7F2B6900E76C76 /* FarmDropSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FarmDropSearch.xcdatamodel; sourceTree = "<group>"; };
@@ -92,6 +96,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D22A1F7F1E89B58E00BB1B81 /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D22A1F801E89B5C500BB1B81 /* ProducerDTOEntityMapper.swift */,
+			);
+			name = mapper;
+			sourceTree = "<group>";
+		};
+		D2C8D4421E8188CE00D7135A /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				D22A1F821E89BA8500BB1B81 /* ProducerDTO.swift */,
+			);
+			name = entity;
+			sourceTree = "<group>";
+		};
 		D2ED450C1E7F2B6900E76C76 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +247,8 @@
 		D2ED45571E7F454A00E76C76 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				D22A1F7F1E89B58E00BB1B81 /* mapper */,
+				D2C8D4421E8188CE00D7135A /* entity */,
 				D2ED45581E7F455200E76C76 /* repository */,
 			);
 			name = data;
@@ -401,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2ED45541E7F40F400E76C76 /* Producer.swift in Sources */,
+				D22A1F811E89B5C500BB1B81 /* ProducerDTOEntityMapper.swift in Sources */,
 				D2ED454B1E7F33F300E76C76 /* UseCase.swift in Sources */,
 				D2ED45651E7F4C9600E76C76 /* MockProducerDataStore.swift in Sources */,
 				D2ED45211E7F2B6900E76C76 /* FarmDropSearch.xcdatamodeld in Sources */,
@@ -410,6 +433,7 @@
 				D2ED455A1E7F457D00E76C76 /* ProducerRepository.swift in Sources */,
 				D2ED457B1E8164D000E76C76 /* ProducerCatalogueViewController.swift in Sources */,
 				D2ED456F1E8088BC00E76C76 /* ProducerCatalogue.swift in Sources */,
+				D22A1F831E89BA8500BB1B81 /* ProducerDTO.swift in Sources */,
 				D2ED457E1E81650B00E76C76 /* ProducerUI.swift in Sources */,
 				D2ED45561E7F43AB00E76C76 /* GetProducerDetails.swift in Sources */,
 				D2ED45681E7F4FE800E76C76 /* ProducerCataloguePresenter.swift in Sources */,
@@ -616,6 +640,7 @@
 				D2ED45371E7F2B6900E76C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2ED45381E7F2B6900E76C76 /* Build configuration list for PBXNativeTarget "FarmDropSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -624,6 +649,7 @@
 				D2ED453A1E7F2B6900E76C76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
